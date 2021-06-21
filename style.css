@@ -1,6 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600;700&family=Josefin+Slab:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
-body {
-    background-color: rgb(81, 0, 148);
+* {
+    margin: 0px;
+    padding: 0px;
 }
+
+body {
+    font-size: 16px; /*Tamanho padrão das fontes na maioria dos navegadores, porém vou definir por causa da medida rem usada no título*/
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /*relembrar definições das positions*/
+}
+
+.img-wrapper {
+    background-color: rgba(0, 0, 0, 0.8); /*Definindo um preto mais leve para o escurecimento da imagem*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Cobre o objeto pai - Remove a distorção da imagem ao ocupar 100% da altura e largura durante a responsividade*/
+    opacity: 0.5; /*Escurecendo um pouco a imagem (na verdade ela fica transparente porém o fundo do img-wrapper está preto */
+    
+    /*######## EFEITO DE ZOOM OUT NA IMAGEM DO CABEÇALHO*/
+    animation: zoom_out 25s; /*Aqui foi definido que esse elemento irá realizar a animação zoom_out e irá durar 25 segundos */
+}
+
+/*E aqui foi definido qual a animação*/
+@keyframes zoom_out{ /* @Keyframe definiu dois quadros chaves*/
+    0%{
+        transform: scale(1.3); /*um ao 0%*/
+    }
+    100%{ /* e outro aos 100% */
+        transform: scale(1);
+    }
+}
+/*######### FIM DO EFEITO ZOOM OUT NO CABEÇALHO*/
+
+.banner {
+    /*POSICIONAMENTO DOS TEXTOS E BOTÕES*/
+    position: absolute; /*relembrar definições das positions*/
+    top: 30%;
+    left: 15%;
+    /*FIM DO POSICIONAMENTO DOS TEXTOS E BOTOES*/
+    
+}
+
+@keyframes moveUp_banner {
+    100%{
+        transform: translateY(0rem) rotateY(0deg);
+        opacity: 100%;
+    }
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+        opacity: 0%;
+    }
+}
+
+.banner h1 {
+    /*CONFIGURAÇÃO DAS FONTES*/
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem; /*Medida rem é em relação ao tamanho da fonte do body / medida EM seria em relação ao elemento pai*/
+    font-family: "Baloo Da 2", sans-serif;
+    font-weight: 200;
+    text-shadow: 0.2rem 0.2rem 2px rgb(0, 0, 0, 0.4); /* 1º:Distanciamento pra direita; 2º:Distanciamento pra baixo; 3º:Blur; 4º:Cor */
+    line-height: 3rem; /*Espaçamento entre linhas*/
+    margin-bottom: 2rem;
+    animation: moveUp_banner 1.1s;
+}
+
+.banner p {
+    /*CONFIGURAÇÃO DAS FONTES*/
+    color:rgb(255, 255, 255);
+    font-family: "Josefin Slab", sans-serif;
+    font-size: 2rem;
+    text-shadow: 0.2rem 0.2rem 2px rgb(0, 0, 0, 0.4); /* 1º:Distanciamento pra direita; 2º:Distanciamento pra baixo; 3º:Blur; 4º:Cor */
+    margin-bottom: 2rem;
+    animation: moveUp_banner 1.3s;
+}
+
+.banner button {
+    /*GRADIENTE DO BOTÃO / PEGO NO SITE UIGRADIENT*/
+    background: #6a3093;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*FIM DO GRADIENTE DO BOTÃO*/
+
+    color: rgb(255, 255, 255);
+    font-family: "Mulish", sans-serif;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; /*Alterando o cursor ao passar em cima do botão*/
+    animation: moveUp_banner 1.5s;
+}
+
