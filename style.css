@@ -60,6 +60,7 @@
 .show-menu .hamburguer{
     right: 16rem;
     transition: 0.3s;
+    z-index: 20;
 }
 
 .lines{
@@ -191,11 +192,13 @@ header {
     top:0px;
     right: -20rem;
     transition: 0.3s;
+    z-index: 10;
 }
 
 .show-menu .sidebar{
     right: 0rem;
     transition: 0.3s;
+    z-index: 10;
 }
 
 .menu{
