@@ -15,6 +15,10 @@
     --secondary-color: #a044ff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hamburguer {
     /*background-color: red;*/
     height: 2rem;
@@ -591,4 +595,52 @@ form button {
     grid-column: 2;
     height: 3rem;
     font-size: 1.3rem;
+}
+
+footer {
+    background-color: #272727;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    font-family: var(--secondary-font);
+    font-size: 1.2rem;
+    color: #d3d3d3;
+}
+
+.social-list ul{
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-evenly;
+}
+
+.social-list a {
+    margin: 0 1rem;
+    color: #d3d3d3;
+}
+
+.link-topo {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 2rem;
+    bottom: 2rem;
+    width: 3rem;
+    height: 3rem;
+    color: #fff;
+    text-shadow: .15rem .15 rem .15rem black;
+    background: -webkit-linear-gradient(to right, #a044ff, #6a3093);
+    background: linear-gradient(to right, #a044ff, #6a3093);
+    border-radius: 3px;
 }
